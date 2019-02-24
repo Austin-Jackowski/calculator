@@ -1,0 +1,133 @@
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f2f4f2;
+}
+
+.container {
+  width: 400px;
+  height: 600px;
+  margin: 100px auto;
+  border: 5px solid #2a2b2b;
+  border-radius: 20px;
+  background-color: black;
+}
+
+.calc-body {
+  height: 100%;
+}
+
+.screen {
+  height: 30%;
+  width: 80%;
+  margin: 20px auto;
+  border: 3px solid black;
+  background-color: #d1f9d9;
+  border-radius: 10px;
+
+}
+
+#top-half {
+  height:35%;
+  border-bottom: 1px solid grey;
+}
+
+#bottom-half{
+  height:65%;
+}
+
+.button-container {
+  height: 60%;
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-areas:
+    "AC AC . minus"
+    "seven eight nine add"
+    "four five six divide"
+    "one two three multiply"
+    "zero decimal equal equal";
+  grid-gap: 5px;
+}
+
+.btn {
+  background-color: #343835;
+  border-radius: 5px;
+  color: #ddd123;
+}
+
+.btn::-moz-focus-inner {
+  border: 0;
+}
+
+.btn-one {
+  grid-area: one;
+}
+
+.btn-two {
+  grid-area: two;
+}
+
+.btn-three {
+  grid-area: three;
+}
+
+.btn-four {
+  grid-area: four;
+}
+
+.btn-five {
+  grid-area: five;
+}
+
+.btn-six {
+  grid-area: six;
+}
+
+.btn-seven {
+  grid-area: seven;
+}
+
+.btn-eight {
+  grid-area: eight;
+}
+
+.btn-nine {
+  grid-area: nine;
+}
+
+.btn-zero {
+  grid-area: zero;
+}
+
+.btn-dec {
+  grid-area: decimal;
+}
+
+.btn-multiply {
+  grid-area: multiply;
+}
+
+.btn-divide {
+  grid-area: divide;
+}
+
+.btn-add {
+  grid-area: add;
+}
+
+.btn-subtract {
+  grid-area: minus;
+}
+
+.btn-equal {
+  grid-area: equal;
+}
+
+.btn-clear {
+  grid-area: AC;
+}
