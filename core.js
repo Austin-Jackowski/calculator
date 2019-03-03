@@ -44,26 +44,3 @@ function display(e) {
     }
   }
 }
-
-function addition(a, b) {
-  return a + b
-}
-
-function subtract(a, b) {
-  return a - b
-}
-
-function multiply(a, b) {
-  return a * b
-}
-
-function divide(a, b) {
-  return a / b
-}
-
-const operate = function(operator, a, b) {
-  if (operator === '+') return addition(a, b)
-  else if (operator === '-') return subtract(a, b)
-  else if (operator === '*') return multiply(a, b)
-  else if (operator === '/') return divide(a, b)
-}
