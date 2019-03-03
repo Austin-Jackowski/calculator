@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Passion One', cursive;
 }
 
 body {
@@ -28,16 +29,17 @@ body {
   border: 3px solid black;
   background-color: #d1f9d9;
   border-radius: 10px;
-
 }
 
 #top-half {
   height:35%;
   border-bottom: 1px solid grey;
+  font-size: 1.2em;
 }
 
 #bottom-half{
   height:65%;
+  font-size: 2em;
 }
 
 .button-container {
@@ -58,6 +60,7 @@ body {
   background-color: #343835;
   border-radius: 5px;
   color: #ddd123;
+  font-size: 2em;
 }
 
 .btn::-moz-focus-inner {
