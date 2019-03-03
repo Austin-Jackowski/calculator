@@ -8,11 +8,11 @@ const buttonList = document.querySelectorAll('button')
 const topScreen = document.querySelector('#top-half')
 const bottomScreen = document.querySelector('#bottom-half')
 let operationArray = []
+const allOperators = document.querySelectorAll('.operator')
 
 // EVENT LISTENERS
 
 buttonList.forEach((button) => button.addEventListener('click', e => {
-
   if (e.target.value === '=') {
     // Some function that displays result
     bottomScreen.textContent = 'result'
@@ -22,9 +22,16 @@ buttonList.forEach((button) => button.addEventListener('click', e => {
     topScreen.textContent = ''
     operationArray = []
   } else {
-    bottomScreen.textContent += e.target.value
-    topScreen.textContent += e.target.value
-    operationArray.push(e.target.value)
+    if (e.target.classList.contains('operator')) {
+      bottomScreen.textContent += e.target.value
+      topScreen.textContent += e.target.value
+      allOperators.forEach(elem => { elem.disabled = true })
+    } else {
+      bottomScreen.textContent += e.target.value
+      topScreen.textContent += e.target.value
+      operationArray.push(e.target.value)
+      allOperators.forEach(elem => { elem.disabled = false })
+    }
   }
 }))
 
