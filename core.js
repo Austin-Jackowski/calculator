@@ -7,21 +7,24 @@ Calculator webapp
 const buttonList = document.querySelectorAll('button')
 const topScreen = document.querySelector('#top-half')
 const bottomScreen = document.querySelector('#bottom-half')
+let operationArray = []
 
 // EVENT LISTENERS
 
 buttonList.forEach((button) => button.addEventListener('click', e => {
 
   if (e.target.value === '=') {
-    //some function that displays result
+    // Some function that displays result
     bottomScreen.textContent = 'result'
     topScreen.textContent += ''
   } else if (e.target.value === 'clear') {
     bottomScreen.textContent = ''
     topScreen.textContent = ''
+    operationArray = []
   } else {
     bottomScreen.textContent += e.target.value
     topScreen.textContent += e.target.value
+    operationArray.push(e.target.value)
   }
 }))
 
