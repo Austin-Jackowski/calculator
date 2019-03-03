@@ -8,14 +8,19 @@ const buttonList = document.querySelectorAll('button')
 const topScreen = document.querySelector('#top-half')
 const bottomScreen = document.querySelector('#bottom-half')
 let operationArray = []
+let result = []
 const allOperators = document.querySelectorAll('.operator')
 
 // EVENT LISTENERS
 
-buttonList.forEach((button) => button.addEventListener('click', e => {
+buttonList.forEach((button) => button.addEventListener('click', display))
+
+// FUNCTIONS
+
+function display(e) {
   if (e.target.value === '=') {
     // Some function that displays result
-    bottomScreen.textContent = 'result'
+    bottomScreen.textContent = `${result.toString()}`
     topScreen.textContent += ''
   } else if (e.target.value === 'clear') {
     bottomScreen.textContent = ''
@@ -25,17 +30,20 @@ buttonList.forEach((button) => button.addEventListener('click', e => {
     if (e.target.classList.contains('operator')) {
       bottomScreen.textContent += e.target.value
       topScreen.textContent += e.target.value
-      allOperators.forEach(elem => { elem.disabled = true })
+      operationArray.push(e.target.value)
+      allOperators.forEach(elem => {
+        elem.disabled = true
+      })
     } else {
       bottomScreen.textContent += e.target.value
       topScreen.textContent += e.target.value
       operationArray.push(e.target.value)
-      allOperators.forEach(elem => { elem.disabled = false })
+      allOperators.forEach(elem => {
+        elem.disabled = false
+      })
     }
   }
-}))
-
-// FUNCTIONS
+}
 
 function addition(a, b) {
   return a + b
